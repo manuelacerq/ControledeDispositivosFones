@@ -13,7 +13,7 @@ def consultar_dispositivo(nome_dispositivo):
 
     col_dispositivo = "Qual fone de ouvido você está tomando posse?"
     col_nome = "Qual o seu nome completo?"
-    col_local = "Em qual localidade o dispositivo estará sendo utilizado? (ex: EAJ, LAIS, etc)"
+    col_local = "Em qual localidade o dispositivo estará sendo utilizado?  (ex: EAJ, LAIS, etc)"
 
     df_filtrado = df[df[col_dispositivo] == nome_dispositivo]
 
