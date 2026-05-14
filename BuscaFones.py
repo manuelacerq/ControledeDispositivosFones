@@ -5,7 +5,11 @@ URL = "https://docs.google.com/spreadsheets/d/1-5bvXP3GrPCCX52XOPKSsy0pL_0WTR5CO
 
 def consultar_dispositivo(nome_dispositivo):
     df = pd.read_csv(URL)
+
+    # remove espaços invisíveis dos nomes das colunas
     df.columns = df.columns.str.strip()
+
+    st.write(df.columns)
 
     col_dispositivo = "Qual fone de ouvido você está tomando posse?"
     col_nome = "Qual o seu nome completo?"
@@ -17,8 +21,11 @@ def consultar_dispositivo(nome_dispositivo):
         return None
 
     ultimo = df_filtrado.iloc[-1]
-    return ultimo[col_nome], ultimo[col_local]
 
+    st.write(ultimo)
+
+    return ultimo[col_nome], ultimo[col_local]
+    
 st.title("🎧 Controle de Fones")
 
 dispositivo = st.selectbox(
