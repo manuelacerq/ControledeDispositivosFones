@@ -5,6 +5,7 @@ URL = "https://docs.google.com/spreadsheets/d/1-5bvXP3GrPCCX52XOPKSsy0pL_0WTR5CO
 
 def consultar_dispositivo(nome_dispositivo):
     df = pd.read_csv(URL)
+    df.columns = df.columns.str.strip()
 
     col_dispositivo = "Qual fone de ouvido você está tomando posse?"
     col_nome = "Qual o seu nome completo?"
@@ -19,6 +20,12 @@ def consultar_dispositivo(nome_dispositivo):
     return ultimo[col_nome], ultimo[col_local]
 
 st.title("🎧 Controle de Fones")
+
+dispositivo = st.selectbox(
+    "Selecione o dispositivo:",
+    ["Fone 1", "Fone 2", "Fone 3", "Fone 4", "Fone 5",
+     "Fone 6", "Fone 7", "Fone 8", "Fone 9", "Fone 10"]
+)
 
 if st.button("Consultar"):
     resultado = consultar_dispositivo(dispositivo)
