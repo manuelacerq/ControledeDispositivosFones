@@ -34,8 +34,8 @@ dispositivo = st.selectbox(
         "Fone 7",
         "Fone 8",
         "Fone 9",
-        "Fone 10"
-        "Fone 11"
+        "Fone 10",
+        "Fone 11",
         "Fone 12"
     ]
 )
